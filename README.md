@@ -1,4 +1,4 @@
-# team-profile-generator
+# Team Profile Generator
 ![EduOceans](https://img.shields.io/badge/Edu-Oceans-blue)
 
 Welcome to the Team Profile Generator project! This command-line application is designed to help you efficiently generate an HTML page that displays information about your team. Whether you're a project manager organizing your team or a developer practicing your coding skills, this project provides a simple and effective way to create a professional-looking team profile.
