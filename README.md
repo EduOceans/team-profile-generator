@@ -22,7 +22,7 @@ To run the website locally, follow these steps:
    ```
 
 ## Usage
-You can have a look at the website [here](https://eduoceans.github.io/team-profile-generator)
+You can have a look at the sample generated team [here](https://eduoceans.github.io/team-profile-generator/output/team.html)
 
 ![image](https://github.com/EduOceans/team-profile-generator/assets/150608334/1a08f963-4169-43bf-9965-3388dd64aa00)
 
