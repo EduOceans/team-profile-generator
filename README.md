@@ -18,10 +18,13 @@ To run the website locally, follow these steps:
    mkdir module-12
    cd module-12
    git clone git@github.com:EduOceans/team-profile-generator.git
+   npm install
    ```
 
 ## Usage
 You can have a look at the website [here](https://eduoceans.github.io/team-profile-generator)
+
+![image](https://github.com/EduOceans/team-profile-generator/assets/150608334/1a08f963-4169-43bf-9965-3388dd64aa00)
 
 
 ## License
