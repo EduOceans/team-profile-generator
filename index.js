@@ -7,10 +7,11 @@ import Manager from './lib/Manager.js';
 import Engineer from './lib/Engineer.js';
 import Intern from './lib/Intern.js';
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// const OUTPUT_DIR = path.resolve(__dirname, "output");
-// const outputPath = path.join(OUTPUT_DIR, "team.html");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+
 import render from './page-template.js';
 const team = [];
 
@@ -41,10 +42,10 @@ function createManager() {
   .then((answers) => {
     const { managerName, id, email, officeNumber } = answers;
     const manager = team.push(new Manager(managerName, id, email, officeNumber));
-    console.log("Manager", manager);
     menu();
   })
 }
+
 function menu() {
   inquirer
   .prompt([
@@ -72,15 +73,15 @@ function menu() {
     } else if(answers.menu === "intern"){
       createIntern();
     } else if(answers.menu === "finish"){
-      console.log('Team:', team);
-      const html = render(team)
-      fs.appendFile('team.html', html, function (err) {
+      const html = render(team);
+      fs.writeFileSync(outputPath, html, { flag: 'w+' }, function (err) {
         if (err) throw err;
       });
     }
   })
 }
-function createEngineer(){
+
+function createEngineer() {
   inquirer
   .prompt([
     {
@@ -111,7 +112,8 @@ function createEngineer(){
     menu();
   })
 }
-function createIntern(){
+
+function createIntern() {
   inquirer
   .prompt([
     {
@@ -138,22 +140,7 @@ function createIntern(){
   .then((answers) => {
     const { internName, id, email, school } = answers;
     const intern = team.push(new Intern(internName, id, email, school));
-    console.log("Intern", intern);
     menu();
   })
 }
 createManager();
-
-
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
-
-
-// // If needed 
-// .catch((error) => {
-//   console.log(error);
-//   if (error.isTtyError) {
-//     // Prompt couldn't be rendered in the current environment
-//   } else {
-//     // Something else went wrong
-//   }
-// });
